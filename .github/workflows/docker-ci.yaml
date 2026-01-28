@@ -18,5 +18,5 @@ jobs:
 
      - name: Build Docker image
        run: |
-         cd app/pyhton
+         cd app/python
          docker build -t acme-travel-app:ci .
