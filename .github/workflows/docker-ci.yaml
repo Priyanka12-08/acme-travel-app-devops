@@ -19,4 +19,8 @@ jobs:
      - name: Build Docker image
        run: |
          cd app/python
-         docker build -t acme-travel-app:ci .
+         docker build -t ${{ secrets.DOCKER_USERNAME }}/acme-travel-app:latest .
+
+     - name: Push Docker image
+       run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/acme-travel-app:latest
